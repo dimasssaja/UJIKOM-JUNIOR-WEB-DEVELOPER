@@ -118,45 +118,39 @@
 
                 <div class="section-title">
                     <h2>Layanan</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>Kami menyediakan berbagai layanan yang dirancang untuk mengoptimalkan manajemen pegawai Anda.</p>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi</p>
+                            <h4 class="title"><a href="">Rekrutmen & Seleksi</a></h4>
+                            <p class="description">Layanan rekrutmen kami membantu Anda menemukan kandidat terbaik untuk memenuhi kebutuhan organisasi Anda.</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore</p>
+                            <h4 class="title"><a href="">Pengembangan Keterampilan</a></h4>
+                            <p class="description">Kami menawarkan program pelatihan dan pengembangan keterampilan untuk meningkatkan kompetensi dan produktivitas pegawai Anda.</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia</p>
+                            <h4 class="title"><a href="">Manajemen Kinerja</a></h4>
+                            <p class="description">Layanan manajemen kinerja kami membantu Anda menetapkan, memantau, dan mengevaluasi kinerja pegawai untuk mencapai tujuan organisasi.</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4 class="title"><a href="">Nemo Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis</p>
+                            <h4 class="title"><a href="">Kesejahteraan Pegawai</a></h4>
+                            <p class="description">Kami menawarkan program kesejahteraan yang dirancang untuk meningkatkan kesehatan dan kesejahteraan pegawai Anda.</p>
                         </div>
                     </div>
 
@@ -187,9 +181,7 @@
             <div class="container">
                 <div class="section-title">
                     <h2>Kontak Kami</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>Kontak Kami untuk informasi lebih lanjut</p>
                 </div>
             </div>
 

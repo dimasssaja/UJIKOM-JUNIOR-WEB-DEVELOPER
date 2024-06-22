@@ -37,16 +37,16 @@
                     <td>{{ $pgw->pendidikan }}</td>
                     <td>{{ $pgw->alamat }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-sm">EDIT</button>
-                        <button type="button" class="btn btn-danger btn-sm">HAPUS</button>
+                        <button type="button" class="btn btn-primary btn-sm" onclick="showEditModal({{ $pgw }})">EDIT</button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="hapusPegawai({{ $pgw->id }})">HAPUS</button>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Tambah Data
-        Pegawai</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Tambah Data Pegawai</button>
 
+    {{-- Modal Tambah Data --}}
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -55,7 +55,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="addPegawaiForm">
                         <div class="mb-3">
                             <label for="addNamePegawai" class="form-label">Nama Pegawai</label>
                             <input type="text" class="form-control" id="addNamePegawai" name="name">
@@ -77,11 +77,11 @@
                                 <option value="Konghucu">Konghucu</option>
                             </select>
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="addEmailPegawai" class="form-label">Email</label>
                             <input type="email" class="form-control" id="addEmailPegawai" name="email"
                                 placeholder="name@gmail.com">
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
                             <label for="addNomor_teleponPegawai" class="form-label">Nomor Telepon</label>
                             <input type="text" class="form-control" id="addNomor_teleponPegawai" name="nomor_telepon">
@@ -111,6 +111,77 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                     <button onclick="createUserPegawai()" type="button" class="btn btn-primary">Tambah</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Modal Edit Data --}}
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Form Edit Data Pegawai</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editPegawaiForm">
+                        <input type="hidden" id="editPegawaiId" name="pegawaiId">
+                        <div class="mb-3">
+                            <label for="editNamePegawai" class="form-label">Nama Pegawai</label>
+                            <input type="text" class="form-control" id="editNamePegawai" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editGenderPegawai" class="form-label">Jenis Kelamin</label>
+                            <select class="form-control" id="editGenderPegawai" name="gender" required>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editAgamaPegawai" class="form-label">Agama</label>
+                            <select class="form-control" id="editAgamaPegawai" name="agama" required>
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Buddha">Buddha</option>
+                                <option value="Konghucu">Konghucu</option>
+                            </select>
+                        </div>
+                        {{-- <div class="mb-3">
+                            <label for="editEmailPegawai" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmailPegawai" name="email"
+                                placeholder="name@gmail.com">
+                        </div> --}}
+                        <div class="mb-3">
+                            <label for="editNomor_teleponPegawai" class="form-label">Nomor Telepon</label>
+                            <input type="text" class="form-control" id="editNomor_teleponPegawai" name="nomor_telepon">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editJabatanPegawai" class="form-label">Jabatan</label>
+                            <input type="text" class="form-control" id="editJabatanPegawai" name="jabatan">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPendidikanPegawai" class="form-label">Pendidikan</label>
+                            <select class="form-control" id="editPendidikanPegawai" name="pendidikan" required>
+                                <option value="S1">S1</option>
+                                <option value="SMA">SMA</option>
+                                <option value="SMK">SMK</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editAlamatPegawai" class="form-label">Alamat</label>
+                            <textarea class="form-control" name="alamat" id="editAlamatPegawai" rows="3"></textarea>
+                        </div>
+                        {{-- <div class="mb-3">
+                            <label for="editFoto" class="form-label">Foto</label>
+                            <input class="form-control" type="file" id="editFoto" name="foto">
+                        </div> --}}
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button onclick="updatePegawai()" type="button" class="btn btn-primary">Update</button>
                 </div>
             </div>
         </div>
@@ -158,7 +229,7 @@
                     if (response.errors) {
 
                         for (const error in response.errors) {
-                            let input = $('#addForm input[name="${error}"]')
+                            let input = $('#addPegawaiForm input[name="${error}"]')
                             input.addClass('is-invalid');
 
                             let feedbackElement = '<div class="invalid-feedback">'
@@ -174,13 +245,101 @@
                     }
                 })
         }
-        $(document).ready(function() {
-            let table = new DataTable('#tbl_pgw');
 
-            table.on('click', 'tbody tr', function() {
-                let data = table.row(this).data();
-                alert('kamu ngeclick baris ke-' + data[0]);
-            });
+        function showEditModal(pgw) {
+            $('#editPegawaiId').val(pgw.id);
+            $('#editNamePegawai').val(pgw.nama_pegawai);
+            $('#editGenderPegawai').val(pgw.gender);
+            $('#editAgamaPegawai').val(pgw.agama);
+            $('#editEmailPegawai').val(pgw.email);
+            $('#editNomor_teleponPegawai').val(pgw.nomor_telepon);
+            $('#editJabatanPegawai').val(pgw.jabatan);
+            $('#editPendidikanPegawai').val(pgw.pendidikan);
+            $('#editAlamatPegawai').val(pgw.alamat);
+
+            $('#editModal').modal('show');
+        }
+
+        function updatePegawai() {
+            const url = "{{ route('pgw.pegawai.update', ':id') }}".replace(':id', $('#editPegawaiId').val());
+            let data = {
+                nama_pegawai: $('#editNamePegawai').val(),
+                gender: $('#editGenderPegawai').val(),
+                agama: $('#editAgamaPegawai').val(),
+                nomor_telepon: $('#editNomor_teleponPegawai').val(),
+                jabatan: $('#editJabatanPegawai').val(),
+                pendidikan: $('#editPendidikanPegawai').val(),
+                alamat: $('#editAlamatPegawai').val()
+            }
+
+            $.ajax({
+                url: url,
+                type: 'PUT',
+                data: data,
+                success: (response) => {
+                    toastr.success(response.message, 'Sukses')
+
+                    setTimeout(() => {
+                        location.reload()
+                    }, 3000);
+                },
+                error: (error) => {
+                    let response = error.responseJSON
+                    toastr.error(response.message, 'Error')
+
+                    if (response.errors) {
+                        for (const error in response.errors) {
+                            let input = $('#editPegawaiForm input[name="${error}"]')
+                            input.addClass('is-invalid');
+
+                            let feedbackElement = '<div class="invalid-feedback">'
+                            feedbackElement += '<ul class="list-unstyled">'
+                            response.errors[error].forEach((message) => {
+                                feedbackElement += '<li>${message}</li>'
+                            })
+                            feedbackElement += '</ul>'
+                            feedbackElement += '</div>'
+
+                            input.after(feedbackElement)
+                        }
+                    }
+                }
+            })
+        }
+
+        function hapusPegawai(id) {
+            Swal.fire({
+                title: 'Yakin ingin menghapus?',
+                text: "Data yang dihapus tidak bisa dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const url = "{{ route('pgw.pegawai.destroy', ':id') }}".replace(':id', id);
+
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        success: (response) => {
+                            toastr.success(response.message, 'Sukses')
+                            setTimeout(() => {
+                                location.reload()
+                            }, 3000);
+                        },
+                        error: (error) => {
+                            let response = error.responseJSON
+                            toastr.error(response.message, 'Error')
+                        }
+                    })
+                }
+            })
+        }
+
+        $(document).ready(function() {
+            new DataTable('#tbl_pgw');
         });
     </script>
 @endpush
