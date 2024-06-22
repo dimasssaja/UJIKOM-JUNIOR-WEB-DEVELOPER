@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::create('pegawai', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_pegawai');
+            $table->string('nomor_telepon')->nullable();
+            $table->string('alamat')->nullable();
             $table->string('agama')->nullable();
             $table->string('gender')->nullable();
             $table->string('jabatan')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('pegawai');
     }
 };

@@ -113,57 +113,11 @@
             </div>
         </section>
 
-        <section class="counts section-bg">
-            <div class="container">
-
-                <div class="row no-gutters">
-
-                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                        <div class="count-box">
-                            <i class="bi bi-emoji-smile"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p><strong>Happy Clients</strong> consequuntur quae qui deca rode</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                        <div class="count-box">
-                            <i class="bi bi-journal-richtext"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p><strong>Projects</strong> adipisci atque cum quia aut numquam delectus</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                        <div class="count-box">
-                            <i class="bi bi-headset"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p><strong>Hours Of Support</strong> aut commodi quaerat. Aliquam ratione</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                        <div class="count-box">
-                            <i class="bi bi-people"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p><strong>Hard Workers</strong> rerum asperiores dolor molestiae doloribu</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
         <section id="services" class="services">
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Our Services</h2>
+                    <h2>Layanan</h2>
                     <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
                         sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
                         ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
@@ -222,7 +176,7 @@
                         <br>
                         Anda dapat memberikan survei pelayanan kami melalui formulir dengan klik tombol di bawah ini
                     </p>
-                    <a class="cta-btn" href="#">Isi Survei</a>
+                    <a class="cta-btn" href="https://forms.gle/HDaCFQqj55BvVUoL9">Isi Survei</a>
                 </div>
 
             </div>
@@ -232,7 +186,7 @@
 
             <div class="container">
                 <div class="section-title">
-                    <h2>Contact Us</h2>
+                    <h2>Kontak Kami</h2>
                     <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
                         sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
                         ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
