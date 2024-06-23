@@ -2,11 +2,12 @@
 
 @section('content')
     <h2 style="text-align: center;">List Data Pegawai</h2>
+    {{-- tabel data --}}
     <table id="tbl_pgw" class="table table-dark table-striped">
         <thead class="thead-dark">
             <tr>
+                {{-- kolom yang digunakan --}}
                 <th scope="col">No</th>
-                {{-- <th scope="col">Foto</th> --}}
                 <th scope="col">Nama</th>
                 <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Agama</th>
@@ -18,17 +19,10 @@
             </tr>
         </thead>
         <tbody>
+            {{-- data yang dikirim --}}
             @foreach ($pegawai as $pgw)
                 <tr>
                     <td>{{ $pgw->id }}</td>
-                    {{-- <td>
-                        @if ($pgw->foto == null)
-                            <span class="badge bg-danger">Belum ada foto</span>
-                        @else
-                            <img class="img-thumbnail" src="{{ asset('fotopegawai/' . $pgw->foto) }}" alt="{{ $pgw->nama }}"
-                                width="50">
-                        @endif
-                    </td> --}}
                     <td>{{ $pgw->nama_pegawai }}</td>
                     <td>{{ $pgw->gender }}</td>
                     <td>{{ $pgw->agama }}</td>
@@ -37,16 +31,19 @@
                     <td>{{ $pgw->pendidikan }}</td>
                     <td>{{ $pgw->alamat }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-sm" onclick="showEditModal({{ $pgw }})">EDIT</button>
-                        <button type="button" class="btn btn-danger btn-sm" onclick="hapusPegawai({{ $pgw->id }})">HAPUS</button>
+                        <button type="button" class="btn btn-primary btn-sm"
+                            onclick="showEditModal({{ $pgw }})">EDIT</button>
+                        <button type="button" class="btn btn-danger btn-sm"
+                            onclick="hapusPegawai({{ $pgw->id }})">HAPUS</button>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Tambah Data Pegawai</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Tambah Data
+        Pegawai</button>
 
-    {{-- Modal Tambah Data --}}
+    {{-- Modal untuk Tambah Data --}}
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -77,11 +74,6 @@
                                 <option value="Konghucu">Konghucu</option>
                             </select>
                         </div>
-                        {{-- <div class="mb-3">
-                            <label for="addEmailPegawai" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="addEmailPegawai" name="email"
-                                placeholder="name@gmail.com">
-                        </div> --}}
                         <div class="mb-3">
                             <label for="addNomor_teleponPegawai" class="form-label">Nomor Telepon</label>
                             <input type="text" class="form-control" id="addNomor_teleponPegawai" name="nomor_telepon">
@@ -102,10 +94,6 @@
                             <label for="addAlamatPegawai" class="form-label">Alamat</label>
                             <textarea class="form-control" name="alamat" id="addAlamatPegawai" rows="3"></textarea>
                         </div>
-                        {{-- <div class="mb-3">
-                            <label for="addFoto" class="form-label">Foto</label>
-                            <input class="form-control" type="file" id="addFoto" name="foto">
-                        </div> --}}
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -117,7 +105,8 @@
     </div>
 
     {{-- Modal Edit Data --}}
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -148,14 +137,10 @@
                                 <option value="Konghucu">Konghucu</option>
                             </select>
                         </div>
-                        {{-- <div class="mb-3">
-                            <label for="editEmailPegawai" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="editEmailPegawai" name="email"
-                                placeholder="name@gmail.com">
-                        </div> --}}
                         <div class="mb-3">
                             <label for="editNomor_teleponPegawai" class="form-label">Nomor Telepon</label>
-                            <input type="text" class="form-control" id="editNomor_teleponPegawai" name="nomor_telepon">
+                            <input type="text" class="form-control" id="editNomor_teleponPegawai"
+                                name="nomor_telepon">
                         </div>
                         <div class="mb-3">
                             <label for="editJabatanPegawai" class="form-label">Jabatan</label>
@@ -173,10 +158,6 @@
                             <label for="editAlamatPegawai" class="form-label">Alamat</label>
                             <textarea class="form-control" name="alamat" id="editAlamatPegawai" rows="3"></textarea>
                         </div>
-                        {{-- <div class="mb-3">
-                            <label for="editFoto" class="form-label">Foto</label>
-                            <input class="form-control" type="file" id="editFoto" name="foto">
-                        </div> --}}
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -188,11 +169,13 @@
     </div>
 @endsection
 
+{{-- file css untuk di push ke dalam stack pada profile.dashboard --}}
 @push('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
 @endpush
 
+{{-- file javascript untuk di push ke dalam stack pada profile.dashboard --}}
 @push('js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -202,6 +185,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
     <script>
+        // fungsi untuk tambah data
         function createUserPegawai() {
             const url = "{{ route('pgw.pegawai.store') }}";
             let data = {
@@ -214,52 +198,51 @@
                 alamat: $('#addAlamatPegawai').val()
             }
 
-            $.post(url, data)
-                .done((response) => {
-                    toastr.success(response.message, 'Sukses')
-
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: data,
+                success: (response) => {
+                    toastr.success(response.message, 'Sukses');
                     setTimeout(() => {
-                        location.reload()
+                        location.reload();
                     }, 3000);
-                })
-                .fail((error) => {
-                    let response = error.responseJSON
-                    toastr.error(response.message, 'Error')
-
+                },
+                error: (error) => {
+                    let response = error.responseJSON;
+                    toastr.error(response.message, 'Error');
                     if (response.errors) {
-
                         for (const error in response.errors) {
-                            let input = $('#addPegawaiForm input[name="${error}"]')
+                            let input = $('#addPegawaiForm input[name="' + error + '"]');
                             input.addClass('is-invalid');
-
-                            let feedbackElement = '<div class="invalid-feedback">'
-                            feedbackElement += '<ul class="list-unstyled">'
+                            let feedbackElement = '<div class="invalid-feedback">';
+                            feedbackElement += '<ul class="list-unstyled">';
                             response.errors[error].forEach((message) => {
-                                feedbackElement += '<li>${message}</li>'
-                            })
-                            feedbackElement += '</ul>'
-                            feedbackElement += '</div>'
-
-                            input.after(feedbackElement)
+                                feedbackElement += '<li>' + message + '</li>';
+                            });
+                            feedbackElement += '</ul>';
+                            feedbackElement += '</div>';
+                            input.after(feedbackElement);
                         }
                     }
-                })
+                }
+            });
         }
 
+        // menampilkan edit setelah button di click,dan menampilkan data sebelumnya berdasarkan idpgw
         function showEditModal(pgw) {
             $('#editPegawaiId').val(pgw.id);
             $('#editNamePegawai').val(pgw.nama_pegawai);
             $('#editGenderPegawai').val(pgw.gender);
             $('#editAgamaPegawai').val(pgw.agama);
-            $('#editEmailPegawai').val(pgw.email);
             $('#editNomor_teleponPegawai').val(pgw.nomor_telepon);
             $('#editJabatanPegawai').val(pgw.jabatan);
             $('#editPendidikanPegawai').val(pgw.pendidikan);
             $('#editAlamatPegawai').val(pgw.alamat);
-
             $('#editModal').modal('show');
         }
 
+        // update data
         function updatePegawai() {
             const url = "{{ route('pgw.pegawai.update', ':id') }}".replace(':id', $('#editPegawaiId').val());
             let data = {
@@ -278,7 +261,6 @@
                 data: data,
                 success: (response) => {
                     toastr.success(response.message, 'Sukses')
-
                     setTimeout(() => {
                         location.reload()
                     }, 3000);
@@ -286,27 +268,24 @@
                 error: (error) => {
                     let response = error.responseJSON
                     toastr.error(response.message, 'Error')
-
                     if (response.errors) {
                         for (const error in response.errors) {
-                            let input = $('#editPegawaiForm input[name="${error}"]')
+                            let input = $('#editPegawaiForm input[name="' + error + '"]')
                             input.addClass('is-invalid');
-
                             let feedbackElement = '<div class="invalid-feedback">'
                             feedbackElement += '<ul class="list-unstyled">'
                             response.errors[error].forEach((message) => {
-                                feedbackElement += '<li>${message}</li>'
+                                feedbackElement += '<li>' + message + '</li>'
                             })
                             feedbackElement += '</ul>'
                             feedbackElement += '</div>'
-
                             input.after(feedbackElement)
                         }
                     }
                 }
             })
         }
-
+        // hapus data
         function hapusPegawai(id) {
             Swal.fire({
                 title: 'Yakin ingin menghapus?',
@@ -337,7 +316,7 @@
                 }
             })
         }
-
+        // jika dokumen sudah siap laksanakan fungsi datatable
         $(document).ready(function() {
             new DataTable('#tbl_pgw');
         });

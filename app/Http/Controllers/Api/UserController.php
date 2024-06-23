@@ -9,7 +9,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * menampilkan data.
      */
     public function index()
     {
@@ -21,7 +21,7 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * menambahkan data.
      */
     public function store(Request $request)
     {
@@ -42,43 +42,11 @@ class UserController extends Controller
                 'required',
                 'min:8'
             ],
-            // 'nomor_telepon' =>[
-            //     'nullable',
-            // ],
-            // 'alamat' =>[
-            //     'nullable',
-            // ],
-            // 'foto' =>[
-            //     'nullable',
-            // ],
-            // 'agama' =>[
-            //     'nullable',
-            // ],
-            // 'gender' =>[
-            //     'nullable',
-            // ],
-            // 'jabatan' =>[
-            //     'nullable',
-            // ],
-            // 'password_confirmation' => [
-            //     'required',
-            //     'same:password'
-            // ],
-            // 'avatar'    => [
-            //     'nullable',
-            //     'image',
-            //     'mimes:jpg,jpeg,png',
-            //     'max:2048' // 2MB
-            // ]
+            'role' =>[
+                'required',
+                'in:admin,user'
+            ],
         ]);
-
-        // unggah avatar
-        // if ($request->hasFile('avatar')) {
-        //     $avatar = $request->file('avatar');
-        //     $avatarPath = $avatar->store('avatars', 'public');
-
-        //     $validated['avatar'] = $avatarPath;
-        // }
 
         // membuat user baru
         $user = User::create($validated);
@@ -90,7 +58,7 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * menampilkan data berdasarkan id.
      */
     public function show(string $id)
     {
@@ -102,7 +70,7 @@ class UserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * mengupdata data berdasarkan id.
      */
     public function update(Request $request, string $id)
     {
@@ -122,43 +90,11 @@ class UserController extends Controller
                 'required',
                 'min:8'
             ],
-            // 'nomor_telepon' =>[
-            //     'nullable',
-            // ],
-            // 'alamat' =>[
-            //     'nullable',
-            // ],
-            // 'foto' =>[
-            //     'nullable',
-            // ],
-            // 'agama' =>[
-            //     'nullable',
-            // ],
-            // 'gender' =>[
-            //     'nullable',
-            // ],
-            // 'jabatan' =>[
-            //     'nullable',
-            // ],
-            // 'password_confirmation' => [
-            //     'required',
-            //     'same:password'
-            // ],
-            // 'avatar'    => [
-            //     'nullable',
-            //     'image',
-            //     'mimes:jpg,jpeg,png',
-            //     'max:2048' // 2MB
-            // ]
+            'role' =>[
+                'required',
+                'in:admin,user'
+            ],
         ]);
-
-        // unggah avatar
-        // if ($request->hasFile('avatar')) {
-        //     $avatar = $request->file('avatar');
-        //     $avatarPath = $avatar->store('avatars', 'public');
-
-        //     $validated['avatar'] = $avatarPath;
-        // }
 
         // jika ada password baru, maka update password
         if ($request->filled('password')) {
@@ -177,7 +113,7 @@ class UserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete berdasarkan id data.
      */
     public function destroy(string $id)
     {

@@ -1,7 +1,12 @@
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
-
+        <div class="mb-4 text-center">
+            <img src="./assets/img/icon1.png" alt="Logo" class="mx-auto w-20 h-20">
+            <h2 class="mt-2 text-xl font-semibold text-gray-800">
+                DSiGawai
+            </h2>
+        </div>
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
@@ -41,7 +46,7 @@
 
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
+                {{ __('Sudah Punya Akun?') }}
             </a>
 
             <x-primary-button class="ms-4">

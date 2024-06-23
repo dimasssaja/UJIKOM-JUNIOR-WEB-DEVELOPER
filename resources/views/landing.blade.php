@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
 
-    <link href="{{ asset('') }}assets/img/favicon.png" rel="icon">
+    <link href="{{ asset('') }}assets/img/icon1.png" rel="icon">
     <link href="{{ asset('') }}assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 
@@ -26,18 +26,21 @@
     <link href="{{ asset('') }}assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="{{ asset('') }}assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+    <!-- Link ke file CSS utama -->
     <link href="{{ asset('') }}assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
+    {{-- //Welcome hero --}}
     <section id="hero">
         <div class="hero-container">
+            <!-- Carousel di bagian Hero -->
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
                 <div class="carousel-item active"
                     style="background-image: url({{ asset('') }}assets/img/slide/bg1.jpg);">
                     <div class="carousel-container">
                         <div class="carousel-content">
+                            <!-- membuat animasi di bagian Hero -->
                             <h2 class="animate__animated animate__fadeInDown">Welcome to <span>DSiGawai</span></h2>
                             <p class="animate__animated animate__fadeInUp">Selamat Datang
                                 DSiGawai adalah Aplikasi Manajemen Kepegawaian Online Berbasis Website.</p>
@@ -52,20 +55,19 @@
         </div>
     </section>
 
-
+    {{-- header navbar --}}
     <header id="header" class="d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1 class="text-light"><a href="index.html"><span>DSiGawai</span></a></h1>
+                <h1 class="text-light"><a href="#"><span>DSiGawai</span></a></h1>
             </div>
-
+            {{-- navbar menu --}}
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="#about">Profil</a></li>
                     <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
-                    {{-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> --}}
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('login') }}">Login</a></li>
                 </ul>
@@ -75,9 +77,9 @@
         </div>
     </header>
 
+    {{-- body utama --}}
     <main id="main">
-
-
+        <!-- Section untuk Bagian Tentang Kami -->
         <section id="about" class="about">
             <div class="container">
 
@@ -113,6 +115,7 @@
             </div>
         </section>
 
+        <!-- Section untuk Bagian Layanan-->
         <section id="services" class="services">
             <div class="container">
 
@@ -126,7 +129,8 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bx bxl-dribbble"></i></div>
                             <h4 class="title"><a href="">Rekrutmen & Seleksi</a></h4>
-                            <p class="description">Layanan rekrutmen kami membantu Anda menemukan kandidat terbaik untuk memenuhi kebutuhan organisasi Anda.</p>
+                            <p class="description">Layanan rekrutmen kami membantu Anda menemukan kandidat terbaik untuk
+                                memenuhi kebutuhan organisasi Anda.</p>
                         </div>
                     </div>
 
@@ -134,7 +138,8 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-file"></i></div>
                             <h4 class="title"><a href="">Pengembangan Keterampilan</a></h4>
-                            <p class="description">Kami menawarkan program pelatihan dan pengembangan keterampilan untuk meningkatkan kompetensi dan produktivitas pegawai Anda.</p>
+                            <p class="description">Kami menawarkan program pelatihan dan pengembangan keterampilan untuk
+                                meningkatkan kompetensi dan produktivitas pegawai Anda.</p>
                         </div>
                     </div>
 
@@ -142,7 +147,8 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-tachometer"></i></div>
                             <h4 class="title"><a href="">Manajemen Kinerja</a></h4>
-                            <p class="description">Layanan manajemen kinerja kami membantu Anda menetapkan, memantau, dan mengevaluasi kinerja pegawai untuk mencapai tujuan organisasi.</p>
+                            <p class="description">Layanan manajemen kinerja kami membantu Anda menetapkan, memantau,
+                                dan mengevaluasi kinerja pegawai untuk mencapai tujuan organisasi.</p>
                         </div>
                     </div>
 
@@ -150,7 +156,8 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-world"></i></div>
                             <h4 class="title"><a href="">Kesejahteraan Pegawai</a></h4>
-                            <p class="description">Kami menawarkan program kesejahteraan yang dirancang untuk meningkatkan kesehatan dan kesejahteraan pegawai Anda.</p>
+                            <p class="description">Kami menawarkan program kesejahteraan yang dirancang untuk
+                                meningkatkan kesehatan dan kesejahteraan pegawai Anda.</p>
                         </div>
                     </div>
 
@@ -159,9 +166,9 @@
             </div>
         </section>
 
+        <!-- Section untuk Bagian cta, untuk survei-->
         <section class="cta">
             <div class="container">
-
                 <div class="text-center">
                     <h3>Survei Pelayanan</h3>
                     <p> Bantu kami untuk menjadi lebih baik lagi <br>
@@ -176,8 +183,8 @@
             </div>
         </section>
 
+        <!-- Section Bagian Kontak -->
         <section id="contact" class="contact section-bg">
-
             <div class="container">
                 <div class="section-title">
                     <h2>Kontak Kami</h2>
@@ -186,10 +193,7 @@
             </div>
 
             <div class="container-fluid">
-
                 <div class="row">
-
-
                     <div class="row">
 
                         <div class="col-lg-6 info d-flex flex-column align-items-stretch">
@@ -217,11 +221,10 @@
 
             </div>
         </section>
-
     </main>
 
+    {{-- footer halaman --}}
     <footer id="footer">
-
         <div class="container">
             <div class="copyright">
                 &copy; Dibuat Oleh <strong><span>Dimas</span></strong>. All Rights Reserved
@@ -229,9 +232,7 @@
         </div>
     </footer>
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
+    <!-- Script JS pendukung yang disediakan -->
     <script src="{{ asset('') }}assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="{{ asset('') }}assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('') }}assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -240,6 +241,7 @@
     <script src="{{ asset('') }}assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="{{ asset('') }}assets/vendor/php-email-form/validate.js"></script>
 
+    <!-- Script JS yang utama -->
     <script src="{{ asset('') }}assets/js/main.js"></script>
 
 </body>

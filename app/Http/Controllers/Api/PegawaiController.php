@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class PegawaiController extends Controller
 {
 
+    // tambah data
     public function store(Request $request)
     {
         // mmebuat validasi
@@ -19,15 +20,6 @@ class PegawaiController extends Controller
                 'min:3',
                 'max:255'
             ],
-            // 'email'     => [
-            //     'required',
-            //     'email',
-            //     'unique:users,email'
-            // ],
-            // 'password'  => [
-            //     'required',
-            //     'min:8'
-            // ],
             'nomor_telepon' =>[
                 'nullable',
             ],
@@ -52,25 +44,7 @@ class PegawaiController extends Controller
             'jabatan' =>[
                 'nullable',
             ],
-            // 'password_confirmation' => [
-            //     'required',
-            //     'same:password'
-            // ],
-            // 'avatar'    => [
-            //     'nullable',
-            //     'image',
-            //     'mimes:jpg,jpeg,png',
-            //     'max:2048' // 2MB
-            // ]
         ]);
-
-        // unggah avatar
-        // if ($request->hasFile('avatar')) {
-        //     $avatar = $request->file('avatar');
-        //     $avatarPath = $avatar->store('avatars', 'public');
-
-        //     $validated['avatar'] = $avatarPath;
-        // }
 
         // membuat user baru
         $user = Pegawai::create($validated);
@@ -81,6 +55,7 @@ class PegawaiController extends Controller
         ], 201);
     }
 
+    // update data
     public function update(Request $request, string $id)
     {
         // mmebuat validasi
@@ -127,6 +102,7 @@ class PegawaiController extends Controller
         ], 200);
     }
 
+    // hapus data
     public function destroy(string $id)
     {
         $user = Pegawai::find($id);
