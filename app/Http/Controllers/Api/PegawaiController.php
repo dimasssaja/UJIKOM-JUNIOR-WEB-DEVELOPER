@@ -50,7 +50,7 @@ class PegawaiController extends Controller
         $user = Pegawai::create($validated);
 
         return response()->json([
-            'message'   => 'Berhasil menambahkan user baru',
+            'message'   => 'Berhasil menambahkan data pegawai baru',
             'data'      => $user
         ], 201);
     }
@@ -97,7 +97,7 @@ class PegawaiController extends Controller
         $user->update($validated);
 
         return response()->json([
-            'message'   => 'Berhasil mengupdate data user',
+            'message'   => 'Berhasil mengupdate data pegawai',
             'data'      => $user
         ], 200);
     }
@@ -109,7 +109,7 @@ class PegawaiController extends Controller
         $user->delete();
 
         return response()->json([
-            'message'   => 'Berhasil menghapus data user',
+            'message'   => 'Berhasil menghapus data pegawai',
             'data'      => $user
         ], 200);
     }
