@@ -37,7 +37,7 @@
             <!-- Carousel di bagian Hero -->
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
                 <div class="carousel-item active"
-                    style="background-image: url({{ asset('') }}assets/img/slide/bg1.jpg);">
+                    style="background-image: url({{ asset('') }}assets/img/slide/pgw2.jpg);">
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <!-- membuat animasi di bagian Hero -->
@@ -129,6 +129,56 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bx bxl-dribbble"></i></div>
                             <h4 class="title"><a href="">Rekrutmen & Seleksi</a></h4>
+                            <p class="description">Layanan rekrutmen kami membantu Anda menemukan kandidat terbaik untuk
+                                memenuhi kebutuhan organisasi Anda.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4 class="title"><a href="">Pengembangan Keterampilan</a></h4>
+                            <p class="description">Kami menawarkan program pelatihan dan pengembangan keterampilan untuk
+                                meningkatkan kompetensi dan produktivitas pegawai Anda.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <h4 class="title"><a href="">Manajemen Kinerja</a></h4>
+                            <p class="description">Layanan manajemen kinerja kami membantu Anda menetapkan, memantau,
+                                dan mengevaluasi kinerja pegawai untuk mencapai tujuan organisasi.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-world"></i></div>
+                            <h4 class="title"><a href="">Kesejahteraan Pegawai</a></h4>
+                            <p class="description">Kami menawarkan program kesejahteraan yang dirancang untuk
+                                meningkatkan kesehatan dan kesejahteraan pegawai Anda.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="rekruitmen" class="rekruitmen">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2></h2>
+                    <p>Kami menyediakan berbagai layanan yang dirancang untuk mengoptimalkan manajemen pegawai Anda.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <h4 class="title"><a href="{{route('rekruitmen')}}">Rekrutmen & Seleksi</a></h4>
                             <p class="description">Layanan rekrutmen kami membantu Anda menemukan kandidat terbaik untuk
                                 memenuhi kebutuhan organisasi Anda.</p>
                         </div>

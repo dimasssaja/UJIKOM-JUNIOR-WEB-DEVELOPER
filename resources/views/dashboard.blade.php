@@ -33,7 +33,7 @@
 </head>
 
 
-<body class="g-sidenav-show  bg-gray-100">
+<body class="g-sidenav-show  bg-blue-100">
 
     {{-- memanggil sidebar dari path, di view sidebar tidak perlu di panggil lagi  --}}
     @include('layouts.partials.sidebar')

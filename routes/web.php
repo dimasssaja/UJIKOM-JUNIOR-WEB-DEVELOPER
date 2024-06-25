@@ -16,6 +16,10 @@ Route::get('/dashboard', function () {
     return view('pages.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/rekruitmen', function () {
+    return view('rekruitmen');
+})->middleware(['auth', 'verified'])->name('rekruitmen');
+
 // jika ingin mengakses harus ada auth/login
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
